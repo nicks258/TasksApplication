@@ -49,10 +49,10 @@
     </ion-card-content>
     <hr>
     <ion-row>
-      <ion-col width-50 style="text-align: center;">
+      <ion-col (click)="shareIt()" width-50 style="text-align: center;">
         <ion-icon name="share-alt">&nbsp; Share</ion-icon>
       </ion-col>
-      <ion-col width-50 style="text-align: center;">
+      <ion-col width-50 (click)="addToWishlist()" style="text-align: center;">
         <ion-icon name="heart">&nbsp; Wishlist</ion-icon>
       </ion-col>
     </ion-row>

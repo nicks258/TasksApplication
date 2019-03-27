@@ -7,7 +7,7 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 
-
+import { SocialSharing } from '@ionic-native/social-sharing'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpModule} from "@angular/http";
@@ -48,6 +48,7 @@ import {ProductDetailPage} from "../pages/product-detail/product-detail";
     InAppBrowser,
     SplashScreen,
     HttpModule,
+    SocialSharing,
     DataProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
 

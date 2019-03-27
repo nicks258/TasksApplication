@@ -1,7 +1,8 @@
 // Native imports
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { SocialSharing } from '@ionic-native/social-sharing'
 
 @IonicPage()
 @Component({
@@ -16,7 +17,8 @@ export class ProductDetailPage {
   review:string;
   book:any;
 
-  constructor(public navCtrl: NavController, public navParam:NavParams,private iab: InAppBrowser) {
+  constructor(public navCtrl: NavController, public navParam:NavParams,private iab: InAppBrowser,
+              private socialShare:SocialSharing,private toastCtrl: ToastController) {
     this.book = this.navParam.get('detail');
     this.bookTitle = this.book.title;
     this.bookAuthor = this.book.author;
@@ -42,4 +44,21 @@ export class ProductDetailPage {
     });
   }
 
+  shareIt() {
+    let env = this;
+    env.socialShare.shareViaWhatsApp("Checkout this book ","",this.book.book_link).then(data=>{
+      console.log("success");
+    }).catch(error=>{
+      console.log(error);
+    })
+  }
+
+  addToWishlist() {
+    let toast = this.toastCtrl.create({
+      message: 'Book is added to wishlist',
+      duration: 3000,
+      position: 'bottom'
+    });
+    toast.present();
+  }
 }
