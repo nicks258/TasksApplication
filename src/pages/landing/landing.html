@@ -1,0 +1,31 @@
+<ion-content>
+  <!-- Play a video on autoplay -->
+  <video autoplay loop src="assets/videos/book_video.mp4"></video>
+
+  <!-- initialize slider -->
+  <ion-slides class="slider_design" pager (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <h4>An all-new chapter.</h4>
+      <p>The redesigned iDream Books is a single, beautiful destination for all the books you love</p>
+    </ion-slide>
+    <ion-slide>
+      <h4>Your library, your way..</h4>
+      <p>Organize your library any way you like. With collections, every one of your books is right where you want it. </p>
+    </ion-slide>
+    <ion-slide>
+      <h4>An all-new Book Store</h4>
+      <p>Swipe from book to book to see which book covers, descriptions, and reviews catch your eye.</p>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
+
+<!--check if user reaches third page activate the button -->
+<ion-footer text-center no-border transparent *ngIf="slideChanged() == 2">
+  <ion-grid>
+    <ion-row>
+      <ion-col  (click)="goToHomePage()" col-12><button ion-button color="primary" full>Explore</button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+

@@ -1,0 +1,71 @@
+<ion-header>
+  <!--for hiding back button as we are using push not root-->
+  <ion-navbar hideBackButton="true">
+    <ion-title class="app_title">
+      <ion-row>
+        <ion-col col-10>
+          Home
+        </ion-col>
+        <ion-col col-1>
+          <!--Notification icon-->
+          <ion-icon name="notifications"></ion-icon>
+        </ion-col>
+        <ion-col col-1>
+          <!--cart icon-->
+          <ion-icon name="cart"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+    <br>
+    <ion-searchbar class="searchbar_style" animated placeholder="Books" [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+    <!--To hide search bar loading if user is not searching-->
+    <div *ngIf="searching" class="spinner-container">
+      <ion-spinner></ion-spinner>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <!-- Segment  buttons with sort and filter -->
+  <ion-segment  value="Sort">
+    <ion-segment-button (click)="sort()"  icon-left>
+      <ion-icon name="md-list"></ion-icon>
+      <div class="segment_button_sort">
+        Sort
+      </div>
+    </ion-segment-button>
+    <ion-segment-button  (click)="openFilterPage()" value="Filter">
+      <ion-icon class="filter_icon" name="funnel"></ion-icon>
+      <div class="segment_button_filter">
+        Filter
+        <ion-badge class="badge">{{filterNumber}}</ion-badge>
+      </div>
+    </ion-segment-button>
+    <ion-icon class="remove_filter_button" *ngIf="isEventsPublished" (click)="removeFilter()"  name="close-circle"></ion-icon>
+  </ion-segment>
+
+<!--Showing array of all books which we parsed-->
+  <ion-grid >
+    <ion-row responsive-sm>
+      <ion-col *ngFor="let books of items" col-12 no-padding >
+        <ion-card>
+          <!--onclick to go product detail page and passing book object to it-->
+          <ion-row (click)="productPage(books)">
+            <ion-col col-4 no-margin><img src="assets/imgs/book.jpg"/></ion-col>
+            <ion-col col-8 no-margin>
+              <ion-card-title class="book_title">
+                {{books.title}}
+              </ion-card-title>
+              <ion-card-content class="fixline" style="padding-top: 0px; padding-left: 0px">
+                by {{books.author}}
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+

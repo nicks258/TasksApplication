@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Genre
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="card-background-page">
+  <!--ionic card looping -->
+  <div *ngFor="let books of books_item">
+    <!--onClick to publish the event-->
+    <ion-card (click)="selectedCategory(books)">
+      <img src = {{books.image_url}} style="opacity: 0.5; height: 220px; width: 391px;"/>
+      <div class="card-title">{{books.description}}</div>
+      <!--Hardcoded text as pagination is not working -->
+      <div class="card-subtitle">25 Listings</div>
+    </ion-card>
+  </div>
+
+</ion-content>
+

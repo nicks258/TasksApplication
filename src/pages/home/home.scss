@@ -1,0 +1,59 @@
+page-home {
+  .button_style{
+      width: 100%;
+  }
+
+  .app_title{
+    margin-top: 5px;
+  }
+
+  .searchbar_style{
+    margin-top: -20px;
+  }
+
+  .filter_icon{
+    margin-left: -50px;
+  }
+
+  .remove_filter_button{
+    margin-left: 28px;
+    position: fixed;
+  }
+
+  .book_title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 33px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width:180px;
+  }
+
+  .spinner-container {
+    width: 100%;
+    color: #ffffff;
+    background: #ffffff;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .segment_button_filter{
+    margin-top: -45px !important;
+    margin-left: 90px;
+    position: fixed;
+  }
+
+  .badge{
+    margin-top: 10px;
+    position: fixed;
+    margin-left: 3px;
+
+  }
+
+  .segment_button_sort{
+    margin-top: -44px !important;
+    margin-left: 60px;
+  }
+
+}

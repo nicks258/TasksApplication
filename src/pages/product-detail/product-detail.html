@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <br>
+      <ion-row>
+        <ion-col class="header" col-10>
+          <!--get book title from the book object that was passed from home page as params-->
+          {{bookTitle}}
+        </ion-col>
+        <ion-col col-1>
+          <ion-icon name="notifications"></ion-icon>
+        </ion-col>
+        <ion-col col-1>
+          <ion-icon name="cart"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+    <br>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="product-detail" style="background-color: #f4f4f4;">
+
+  <!-- initialize slider with hardcoded images as API does'nt provide book covers-->
+  <ion-slides pager style="height: 250px">
+    <ion-slide>
+      <img src="assets/imgs/book.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/book.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/book.jpg">
+    </ion-slide>
+  </ion-slides>
+
+  <!-- initialize Book details -->
+  <ion-card>
+    <ion-card-content>
+      <h2>{{bookTitle}}</h2>
+      <small> by {{bookAuthor}}</small>
+      <!--Hardcoded price-->
+      <p class="price"> {{ 99 | currency: '$' }} </p>
+      <!-- ionic badge for review-->
+      <ion-badge width="25">4.1
+        <ion-icon name="star"></ion-icon>
+      </ion-badge>
+      <span style="font-size: 12px;color: #717171;">340 ratings, 58 reviews</span>
+    </ion-card-content>
+    <hr>
+    <ion-row>
+      <ion-col width-50 style="text-align: center;">
+        <ion-icon name="share-alt">&nbsp; Share</ion-icon>
+      </ion-col>
+      <ion-col width-50 style="text-align: center;">
+        <ion-icon name="heart">&nbsp; Wishlist</ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-content>
+      <!-- showing book details from book object we recived from home page in params-->
+      <ion-row class="detail">
+        Review Publication Name : &nbsp; &nbsp; <b>{{reviewPublicationName}}</b>
+      </ion-row>
+      <hr>
+      <ion-row>
+        {{review}}
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-content>
+      <ion-row class="detail">
+        Ratings & Reviews
+      </ion-row>
+      <ion-row>
+        <ion-col width-50>
+          <span style=" font-size: xx-large; ">4.1
+            <ion-icon name="star"></ion-icon>
+          </span> <br>
+          <span style="font-size: 12px;color: #717171;">385161 ratings</span>
+          <span style="font-size: 12px;color: #717171;">,  20137 reviews</span>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer style="background-color: #fff;">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!--use ionic inAppBrowser to open external link-->
+        <ion-buttons>
+          <button ion-button full clear (click)="bookLink()">
+            <ion-icon ios="ios-funnel" md="md-funnel"></ion-icon>
+            Book Link
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col>
+        <ion-buttons>
+          <!--use ionic inAppBrowser to open external link-->
+          <button ion-button full (click)="reviewLink()">
+            <ion-icon name="menu"></ion-icon>
+            Review Link
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -1,0 +1,128 @@
+[   {
+    "query": "rabbitmq_queue_messages",
+    "filters": {"queue": "iap_monitoring_collector"},
+    "aggregation": ["avg_over_time"],
+    "metric_name": "rabbitmq_queue_messages.iap_monitoring_collector",
+    "sum_over_results": false,
+    "tags": []
+    }, {
+    "query": "rabbitmq_queue_messages",
+    "filters": {"queue": "iap_monitoring_low_priority"},
+    "aggregation": ["avg_over_time"],
+    "metric_name": "rabbitmq_queue_messages.iap_monitoring_low_priority",
+    "sum_over_results": false,
+    "tags": []
+    }, {
+    "query": "rabbitmq_queue_messages",
+    "filters": {"queue": "iap_monitoring_medium_priority"},
+    "aggregation": ["avg_over_time"],
+    "metric_name": "rabbitmq_queue_messages.iap_monitoring_medium_priority",
+    "sum_over_results": false,
+    "tags": []
+    }, {
+    "query": "rabbitmq_queue_messages",
+    "filters": {"queue": "iap_monitoring_high_priority"},
+    "aggregation": ["avg_over_time"],
+    "metric_name": "rabbitmq_queue_messages.iap_monitoring_high_priority",
+    "sum_over_results": false,
+    "tags": []
+    }, {
+    "query": "rabbitmq_queue_messages",
+    "filters": {"queue": "switch_monitoring_collector"},
+    "aggregation": ["avg_over_time"],
+    "metric_name": "rabbitmq_queue_messages.switch_monitoring_collector",
+    "sum_over_results": false,
+    "tags": []
+    }, {
+    "query": "rabbitmq_queue_messages",
+    "filters": {"queue": "switch_monitoring_high_priority"},
+    "aggregation": ["avg_over_time"],
+    "metric_name": "rabbitmq_queue_messages.switch_monitoring_high_priority",
+    "sum_over_results": false,
+    "tags": []
+    }, {
+    "query": "rabbitmq_queue_messages",
+    "filters": {"queue": "switch_monitoring_medium_priority"},
+    "aggregation": ["avg_over_time"],
+    "metric_name": "rabbitmq_queue_messages.switch_monitoring_medium_priority",
+    "sum_over_results": false,
+    "tags": []
+    }, {
+    "query": "rabbitmq_queue_messages",
+    "filters": {"queue": "iap_live_monitoring_collector"},
+    "aggregation": ["avg_over_time"],
+    "metric_name": "rabbitmq_queue_messages.iap_live_monitoring_collector",
+    "sum_over_results": false,
+    "tags": []
+    }, {
+    "query": "kafka_server_brokertopicmetrics_messagesin_total",
+    "filters": {"topic": "malshi.decoded.amon.stats.controller"},
+    "aggregation": ["delta"],
+    "metric_name": "kafka_server_brokertopicmetrics_messagesin_total.malshi_decoded_amon_stats_controller",
+    "sum_over_results": true,
+    "tags": []
+    }, {
+    "query": "kafka_server_brokertopicmetrics_messagesin_total",
+    "filters": {"topic": "malshi.aggregated.amon.state.controller"},
+    "aggregation": ["delta"],
+    "metric_name": "kafka_server_brokertopicmetrics_messagesin_total.malshi_aggregated_amon_state_controller",
+    "sum_over_results": true,
+    "tags": []
+    },{
+    "query": "cassandra_clientrequest_read_latency_count",
+    "filters": {"product": "central"},
+    "aggregation": ["delta"],
+    "metric_name": "cassandra_clientrequest_read_latency_count",
+    "sum_over_results": true,
+    "tags": []
+    },{
+    "query": "cassandra_clientrequest_write_latency_count",
+    "filters": {"product": "central"},
+    "aggregation": ["delta"],
+    "metric_name": "cassandra_clientrequest_write_latency_count",
+    "sum_over_results": true,
+    "tags": []
+    },{
+    "query": "es_indices_indexing_total",
+    "filters": {"index_name": "_all"},
+    "aggregation": ["idelta"],
+    "metric_name": "es_indices_indexing_total",
+    "sum_over_results": true,
+    "tags": []
+    },{
+    "query": "es_indices_indexing_query_total",
+    "filters": {"index_name": "_all"},
+    "aggregation": ["idelta"],
+    "metric_name": "es_indices_indexing_query_total",
+    "sum_over_results": true,
+    "tags": []
+    },{
+    "query": "es_indices_indexing_fetch_total",
+    "filters": {"index_name": "_all"},
+    "aggregation": ["idelta"],
+    "metric_name": "es_indices_indexing_fetch_total",
+    "sum_over_results": true,
+    "tags": []
+    },{
+    "query": "es_indices_indexing_delete_total",
+    "filters": {"index_name": "_all"},
+    "aggregation": ["idelta"],
+    "metric_name": "es_indices_indexing_delete_total",
+    "sum_over_results": true,
+    "tags": []
+    },{
+    "query": "es_indices_indexing_scroll_total",
+    "filters": {"index_name": "_all"},
+    "aggregation": ["idelta"],
+    "metric_name": "es_indices_indexing_scroll_total",
+    "sum_over_results": true,
+    "tags": []
+    },{
+    "query": "pg_stat_database_blks_read",
+    "filters": {"productname": "Central"},
+    "aggregation": ["idelta"],
+    "metric_name": "pg_stat_database_blks_read",
+    "sum_over_results": true,
+    "tags": []
+    }
+]
